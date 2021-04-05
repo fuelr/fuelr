@@ -1,0 +1,69 @@
+{
+  "name": "fuelr",
+  "description": "better fuel price app",
+  "keywords": [
+    "fuel",
+    "price",
+    "pwa",
+    "vue",
+    "typescript"
+  ],
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "vaaski <admin@vaa.ski>",
+  "scripts": {
+    "start": "node -r dotenv/config lib",
+    "test": "nyc ava",
+    "coverage": "live-server coverage/lcov-report",
+    "commit": "cz -S",
+    "back:build": "rimraf lib && tsc -p tsconfig.backend.json",
+    "back:dev": "nodemon",
+    "front:dev": "vite --port 8080",
+    "front:build": "vite build"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "files": [
+      "tests/**/*"
+    ],
+    "require": [
+      "ts-node/register",
+      "dotenv/config"
+    ],
+    "failFast": true
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "^3.0.11",
+    "ava": "^3.15.0",
+    "commitizen": "^4.2.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-ava": "^12.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3",
+    "vite": "^2.1.5",
+    "vite-plugin-windicss": "^0.12.3",
+    "vue-tsc": "^0.0.20"
+  },
+  "dependencies": {
+    "vue": "^3.0.11",
+    "vue-router": "^4.0.5"
+  }
+}
